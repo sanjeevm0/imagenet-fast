@@ -48,7 +48,8 @@ def scale_to(x, ratio, targ): return max(math.floor(x*ratio), targ)
 def resize(targ, source_dir=None, resize_folder='resize'):
     if source_dir is None:
         source_dir = Path.home()/'data/imagenet'
-    val_filenames, val_labels, val_all_labels = read_dirs(source_dir, 'val'); 
+    #val_filenames, val_labels, val_all_labels = read_dirs(source_dir, 'val')
+    val_filenames = read_dir(source_dir, 'val')
     print(f'Found {len(val_filenames)} validation images')
 
     train_filenames, train_labels, train_all_labels = read_dirs(source_dir, 'train'); len(train_filenames)
