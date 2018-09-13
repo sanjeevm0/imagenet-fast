@@ -165,6 +165,7 @@ def torch_loader(data_path, size):
         val_loader.stop_after = 0
 
     data = TorchModelData(data_path, train_loader, val_loader, aug_loader)
+    if train_sampler is not None: data.trn_sampler = train_sampler
     return data, train_sampler
 
 # Seems to speed up training by ~2%
