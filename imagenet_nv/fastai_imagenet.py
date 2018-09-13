@@ -322,7 +322,7 @@ def main():
         update_model_dir(learner, save_dir)
         sargs = save_args('first_run_128', save_dir)
         learner.fit(args.lr,args.epochs, cycle_len=args.cycle_len,
-                    sampler=train_sampler, wds=args.weight_decay, use_clr_beta=args.use_clr,
+                    wds=args.weight_decay, use_clr_beta=args.use_clr,
                     loss_scale=args.loss_scale, **sargs)
         save_sched(learner.sched, save_dir)
         data, train_sampler = torch_loader(args.data, args.sz)
@@ -333,7 +333,7 @@ def main():
     update_model_dir(learner, args.save_dir)
     sargs = save_args('first_run', args.save_dir)
     learner.fit(args.lr,args.epochs, cycle_len=args.cycle_len,
-                sampler=train_sampler, wds=args.weight_decay, use_clr_beta=args.use_clr,
+                wds=args.weight_decay, use_clr_beta=args.use_clr,
                 loss_scale=args.loss_scale, **sargs)
     save_sched(learner.sched, args.save_dir)
 
