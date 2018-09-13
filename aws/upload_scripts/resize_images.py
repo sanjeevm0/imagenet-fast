@@ -26,7 +26,7 @@ def resize_imgs(fnames, targ, path, new_path):
 
 def read_dir(path, folder):
     full_path = os.path.join(path, folder)
-    fnames = glob(f"{full_path}/*.*")
+    fnames = glob.glob(f"{full_path}/*.*")
     if any(fnames):
         return [os.path.relpath(f,path) for f in fnames]
     else:
